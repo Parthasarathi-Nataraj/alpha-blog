@@ -8,6 +8,7 @@ root 'welcome#home'
 
 get 'about' => 'welcome#about'
 
+  resources :articles
 
 
   # Example of regular route:
