@@ -19,10 +19,22 @@ font-weight: bold;
 
 #logo:hover {
 
-color: #ffffff;
+color: #c6c4c4;
 
 text-decoration: none;
 
+}
+
+#navbar-collapse {
+  
+color: #ffffff;
+  
+}
+
+#navbar-collapse:hover {
+  
+color: #c6c4c4;
+  
 }
 
 .center {
@@ -135,6 +147,7 @@ padding-top: 15px;
 padding-bottom: 15px;
 
 }
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
