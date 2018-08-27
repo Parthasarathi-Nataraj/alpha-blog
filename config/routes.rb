@@ -8,9 +8,12 @@ root 'welcome#home'
 
 get 'about' => 'welcome#about'
 
-  resources :articles
+resources :articles
 
-
+get 'signup' => 'users#new'
+post 'users', to: 'users#create'
+ 
+resources :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
