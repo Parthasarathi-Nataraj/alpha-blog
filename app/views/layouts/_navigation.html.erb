@@ -30,8 +30,29 @@
 
 <li><%= link_to "Articles", articles_path , id: "navbar-collapse"%></li>
 
-<li><%= link_to "Users", "users" ,id: "navbar-collapse"%></li>
+<li><%= link_to "Users", users_path ,id: "navbar-collapse"%></li>
 
+
+
+</ul>
+
+<form class="navbar-form navbar-left" role="search">
+
+<div class="form-group">
+
+<input type="text" class="form-control" placeholder="Search">
+
+</div>
+
+<button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+
+<ul class="nav navbar-nav navbar-right">
+  
+<ul class="nav navbar-nav navbar-right">
+
+<% if logged_in? %>
 <li class="dropdown">
 
 <a id="navbar-collapse" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
@@ -55,34 +76,17 @@
 </ul>
 
 </li>
-
-</ul>
-
-<form class="navbar-form navbar-left" role="search">
-
-<div class="form-group">
-
-<input type="text" class="form-control" placeholder="Search">
-
-</div>
-
-<button type="submit" class="btn btn-default">Submit</button>
-
-</form>
-
-<ul class="nav navbar-nav navbar-right">
-
-<li><a id="navbar-collapse" href="#">Link</a></li>
+<li><%= link_to 'Log out', logout_path, method: :delete, id: "navbar-collapse" %></li>
 
 <li class="dropdown">
 
-<a id="navbar-collapse" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+<a id="navbar-collapse" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
 
 <ul class="dropdown-menu">
 
-<li><a href="#">Action</a></li>
+<li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
 
-<li><a href="#">Another action</a></li>
+<li><%= link_to "View your profile", user_path(current_user) %></li>
 
 <li><a href="#">Something else here</a></li>
 
@@ -93,6 +97,16 @@
 </ul>
 
 </li>
+
+<% else %>
+
+<li><%= link_to 'Log in', login_path,  id: "navbar-collapse"%></li>
+
+<li><%= link_to 'Sign up', signup_path, id: "navbar-collapse"%></li>
+
+<% end %>
+
+</ul>
 
 </ul>
 
