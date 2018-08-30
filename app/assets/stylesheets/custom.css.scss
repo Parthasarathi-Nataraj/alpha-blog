@@ -42,15 +42,10 @@ color: #c6c4c4;
 text-align: center;
 
 }
-
 .jumbotron {
-
-background-image: asset-url('Bg_Image.jpg');
-
-background-size: cover;
-
-height: 550px;
-
+	  background-image: asset-url('Bg_Image.jpg');
+    background-size: cover;
+    height: 560px;
 }
 
 .jumbotron h1 {
