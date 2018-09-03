@@ -4,7 +4,7 @@ before_action :set_user, only: [:edit, :update, :show]
 
 before_action :require_same_user, only: [:edit, :update, :destroy]
 
-before_action :require_admin, only: [:destroy]
+before_action :require_admin, only: [:destroy, :index]
 
 def index
 
@@ -104,7 +104,7 @@ end
 
 def require_admin
 
-if logged_in? and !current_user.admin?
+if !logged_in? or (logged_in? and !current_user.admin?)
 
 flash[:danger] = "Only admin users can perform that action"
 

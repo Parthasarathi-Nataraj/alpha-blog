@@ -29,8 +29,7 @@
 <ul class="nav navbar-nav">
 
 <li><%= link_to "View All Articles", articles_path , id: "navbar-collapse"%></li>
-
-<%-#<li><%= link_to "Users", users_path ,id: "navbar-collapse"</li>-%>
+<li><%=link_to "Users", users_path ,id: "navbar-collapse" if logged_in? and current_user.admin? %></li>
 </ul>
 
 <ul class="nav navbar-nav navbar-right">
@@ -46,7 +45,7 @@
 
 <li><%= link_to "Create a new Article", new_article_path %></li>
 
-<li><%= link_to "Edit your existing Articles", user_path(current_user) %></li>
+<li><%= link_to "View your existing Articles", user_path(current_user) %></li>
 
 <%-#<li><a href="#">Something else here</a></li>-%>
 
@@ -80,11 +79,9 @@
 </li>
 
 <% else %>
-
+<li><%# link_to 'Sign up', signup_path, id: "navbar-collapse"%></li>
+  
 <li><%= link_to 'Log in', login_path,  id: "navbar-collapse"%></li>
-
-<li><%= link_to 'Sign up', signup_path, id: "navbar-collapse"%></li>
-
 <% end %>
 
 </ul>
