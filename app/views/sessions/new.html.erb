@@ -1,18 +1,19 @@
+<div class="container">
 <h1 align="center">Log in</h1>
 
-<%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+<form class="form-horizontal" role="form" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="WH79bfYTKMHHQVMFFSUccpia7l9WDkQIKt6YVNz3dYtJfUQbcOXdMla395Wrurqu/mSC5bxn8vDq4p82IvDQ+g==" />
 
 <div class="form-group">
 
 <div class="control-label col-sm-2">
 
-<%= f.label :email %>
+<label for="session_email">Email</label>
 
 </div>
 
 <div class="col-sm-8">
 
-<%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true %>
+<input class="form-control" placeholder="Enter email" autofocus="autofocus" type="email" name="session[email]" id="session_email" />
 
 </div>
 
@@ -22,13 +23,13 @@
 
 <div class="control-label col-sm-2">
 
-<%= f.label :password %>
+<label for="session_password">Password</label>
 
 </div>
 
 <div class="col-sm-8">
 
-<%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+<input class="form-control" autocomplete="off" type="password" name="session[password]" id="session_password" />
 
 </div>
 
@@ -38,16 +39,16 @@
 
 <div class="col-sm-offset-2 col-sm-10">
 
-<%= f.submit "Log in", class: 'btn btn-primary btn-lg' %>
+<input type="submit" name="commit" value="Log in" class="btn btn-primary btn-lg" />
 
 </div>
 
 </div>
 
-<% end %>
-
+</form>
 <div class="col-xs-4 col-xs-offset-4">
 
-[ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
+[ <a href="/articles">Cancel request and return to articles listing</a> ]
 
+</div>
 </div>

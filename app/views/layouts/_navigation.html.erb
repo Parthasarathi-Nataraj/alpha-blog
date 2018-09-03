@@ -69,18 +69,14 @@
 <ul class="dropdown-menu">
 
 <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
-
 <li role="separator" class="divider"></li>
-
-<li><a href="#">Separated link</a></li>
+<li><%= link_to 'Add user', signup_path if current_user.admin? %></li>
 
 </ul>
 <li><%= link_to 'Log out', logout_path, method: :delete, id: "navbar-collapse" %></li>
 </li>
 
-<% else %>
-<li><%# link_to 'Sign up', signup_path, id: "navbar-collapse"%></li>
-  
+<% else %>  
 <li><%= link_to 'Log in', login_path,  id: "navbar-collapse"%></li>
 <% end %>
 
