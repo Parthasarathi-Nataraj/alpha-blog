@@ -5,8 +5,7 @@ def new
 end
 
 def create
-session[:user_id] = nil
-  
+
 user = User.find_by(email: params[:session][:email].downcase)
 
 if user && user.authenticate(params[:session][:password])
@@ -19,8 +18,6 @@ redirect_to user_path(user)
 
 else
 
-session[:user_id] = nil
-  
 flash.now[:danger] = "There was something wrong with your login information"
 
 render 'new'
