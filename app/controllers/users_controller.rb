@@ -4,7 +4,7 @@ before_action :set_user, only: [:edit, :update, :show]
 
 before_action :require_same_user, only: [:edit, :update, :destroy]
 
-before_action :require_admin, only: [:destroy, :index]
+before_action :require_admin, only: [:destroy, :index, :create, :new]
 
 def index
 
